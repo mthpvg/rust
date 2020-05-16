@@ -16,3 +16,12 @@ cargo check
 cargo run
 cargo build --release
 ```
+
+## Docker
+```
+docker build -t mthpvg/hello_cargo .
+
+docker run --rm mthpvg/hello_cargo
+
+docker stop $(docker ps -q)
+```
