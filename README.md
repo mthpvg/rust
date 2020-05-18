@@ -30,7 +30,7 @@ docker stop $(docker ps -q)
 
 Build hte rust program and retrieve it from the container
 ```
-DOCKER_BUILDKIT=1 docker build --file Dockerfile --output . .
+DOCKER_BUILDKIT=1 docker build --file Dockerfile --output build .
 ```
 
 Multi-stage: https://alexbrand.dev/post/how-to-package-rust-applications-into-minimal-docker-containers/
