@@ -1,9 +1,9 @@
-FROM rust:1.43-slim
+FROM rust:1.43-slim  AS build
 
 WORKDIR /usr/src/app
 COPY . .
 
-RUN cargo install --path .
+RUN cargo build --release
 
-# "hello_cargo" is the name of the package as seen in the Cargo.toml file
-CMD ["hello_cargo"]
+FROM scratch AS export
+COPY --from=build /usr/src/app/target/release/hello_cargo .
